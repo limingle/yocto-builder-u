@@ -4,14 +4,41 @@
 # * maintainer [optional]
 
 # default IMGNAME: test-u
-IMGNAME=
+IMGNAME=yocto-u
 
 # default VERSION: latest
 VERSION=
 
 PKGS="\
-     vim \
-     exuberant-ctags \
+     build-essential \
+     chrpath \
+     cpio \
+     debianutils \
+     diffstat \
+     gawk \
+     gcc \
+     git \
+     iputils-ping \
+     libegl1-mesa \
+     liblz4-tool \
+     libsdl1.2-dev \
+     locales \
+     mesa-common-dev \
+     pylint3 \
+     python \
+     python3 \
+     python3-git \
+     python3-jinja2 \
+     python3-pexpect \
+     python3-pip \
+     python3-subunit \
+     socat \
+     texinfo \
+     unzip \
+     wget \
+     xterm \
+     xz-utils \
+     zstd \
 "
 maintainer="alexlee alexander.lee.cn@gmail.com"
 
@@ -20,4 +47,4 @@ maintainer="alexlee alexander.lee.cn@gmail.com"
 # * ENTRY
 
 # default entrypoint: /bin/bash
-ENTRY="vim"
+ENTRY="/bin/bash"
