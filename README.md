@@ -4,19 +4,19 @@
 ## 1. 构建docker image
 在当前目录执行：
 
-> **./scripts/build.sh**
+> ./scripts/build.sh
 
-会创建名称为 **$USERNAME/yocto-u:latest** 的docker image  
+会创建名称为 **${USERNAME}/yocto-u:latest** 的docker image  
 例如：用户alice创建的默认image名称为 alice/yocto-u:latest
 
 ## 2. 安装脚本
 
 构建完毕后，在当前目录执行：
 
-> **FUNC_ALIAS=yocto ./scripts/install.sh [TargetPath]**
+> FUNC_ALIAS=**yocto** ./scripts/install.sh [TargetPath]
 
 **TargetPath** 的默认值为： `${HOME}/.local`  
-如不作修改，则生成的脚本为：`${HOME}/.local/docker_env/yocto_yocto-u_env`  
+如不指定**TargetPath**，则生成的脚本为：`${HOME}/.local/docker_env/yocto_yocto-u_env`  
 
 ## 3. 使用方法
 对于用户alice, 参考安装脚本提示：
