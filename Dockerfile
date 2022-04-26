@@ -1,4 +1,4 @@
-FROM ubuntu as base
+FROM ubuntu:20.04 as base
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV TZ=Asia/Shanghai
