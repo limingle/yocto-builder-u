@@ -39,6 +39,9 @@ PKGS="\
      xterm \
      xz-utils \
      zstd \
+     sudo \
+     iproute2 \
+     iptables \
 "
 maintainer="alexlee alexander.lee.cn@gmail.com"
 

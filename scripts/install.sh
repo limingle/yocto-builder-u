@@ -28,6 +28,16 @@ docker_${FUNC_NAME##*/}() {
         --rm \\
         -u $(id -u) \\
         --entrypoint \${ENTRY:-"${ENTRY}"} \\
+        -v /tmp/.X11-unix:/tmp/.X11-unix \\
+        -e DISPLAY=unix\$DISPLAY  \\
+        -e GDK_SCALE  \\
+        -e GDK_DPI_SCALE \\
+        -e AUDIO_ID=\`getent group audio | cut -d: -f3\` \\
+        -e VIDEO_GID=\`getent group video | cut -d: -f3\` \\
+        --cap-add=NET_ADMIN \\
+        --device /dev/net/tun \\
+        --device /dev/snd:/dev/snd \\
+        --device /dev/video0:/dev/video0 \\
         -v /home/\${USERNAME}:/home/\${USERNAME} \\
         -v /media:/media \\
         --hostname ${IMGNAME:-"test-u"} \\

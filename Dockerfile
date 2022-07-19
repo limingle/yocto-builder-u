@@ -24,7 +24,8 @@ ARG username
 ENV HOME=/home/$username
 
 RUN groupadd -g $groupid $username && \
-    useradd -u $userid -g $groupid $username
+    useradd -u $userid -g $groupid $username && \
+    echo "$username ALL=(ALL:ALL) NOPASSWD: ALL" > /etc/sudoers.d/$username
 
 ENTRYPOINT [ "/bin/bash", "-c" ]
 CMD ["echo -e \"USEAGE:\ndocker_<entry> [arg1 [arg2 [...] ] ]\""]
